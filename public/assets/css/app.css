@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "IRANYekan";
+    font-style: normal;
+    font-weight: 300;
+    src: url("/assets/fonts/iranyekan/IRANYekanXFaNum-Light.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "IRANYekan";
+    font-style: normal;
+    font-weight: normal;
+    src: url("/assets/fonts/iranyekan/IRANYekanXFaNum-Regular.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "IRANYekan";
+    font-style: normal;
+    font-weight: 500;
+    src: url("/assets/fonts/iranyekan/IRANYekanXFaNum-Medium.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "IRANYekan";
+    font-style: normal;
+    font-weight: 600;
+    src: url("/assets/fonts/iranyekan/IRANYekanXFaNum-DemiBold.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "IRANYekan";
+    font-style: normal;
+    font-weight: bold;
+    src: url("/assets/fonts/iranyekan/IRANYekanXFaNum-Bold.woff2") format("woff2");
+  }
+  html{
+    color-scheme: dark;
+    
+  }
+  body {
+    @apply font-iranyekan;
+
+  }
+
+  /* Color Mode transition */
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+  }
+
+  ::view-transition-old(root) {
+    z-index: 1;
+  }
+
+  ::view-transition-new(root) {
+    z-index: 2147483646;
+  }
+
+  .dark::view-transition-old(root) {
+    z-index: 2147483646;
+  }
+
+  .dark::view-transition-new(root) {
+    z-index: 1;
+  }
+
+}
