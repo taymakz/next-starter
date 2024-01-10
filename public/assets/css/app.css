@@ -37,10 +37,7 @@
     font-weight: bold;
     src: url("/assets/fonts/iranyekan/IRANYekanXFaNum-Bold.woff2") format("woff2");
   }
-  html{
-    color-scheme: dark;
-    
-  }
+
   body {
     @apply font-iranyekan;
 
