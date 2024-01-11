@@ -4,7 +4,6 @@ import type { Metadata } from 'next'
 import '../public/assets/css/tailwind.css'
 
 import { Providers } from "./providers";
-import { ThemeProvider } from "@/components/theme-provider"
 
 
 export const metadata: Metadata = {
@@ -19,18 +18,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="fa-IR" dir="rtl">
-      <body className='transition-colors duration-500'>
+    <html lang="fa-IR" dir="rtl" suppressHydrationWarning >
+      <body>
         <Providers>
-
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
             {children}
-          </ThemeProvider>
         </Providers>
 
       </body>
