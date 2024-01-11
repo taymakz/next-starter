@@ -9,7 +9,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 
 export const metadata: Metadata = {
   title: 'Next js Starter',
-  
+
 
 }
 
@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fa-IR" dir="rtl" className='dark'>
-      <body>
+      <body className='transition-colors duration-500'>
         <Providers>
 
           <ThemeProvider
