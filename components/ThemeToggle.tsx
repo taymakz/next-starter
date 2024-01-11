@@ -64,14 +64,14 @@ export function ThemeToggle() {
   }
   return (
     <div>
-      <button onClick={() => theme === 'dark' ? setTheme('light') : setTheme('dark')} >
+      <button onClick={() => toggle()} >
 
-        {
-          theme === 'dark' ? <Sun /> : <Moon />
-        }
+      {
+        theme === 'dark' ? <Sun /> : <Moon />
+      }
 
-      </button>
-    </div>
+    </button>
+    </div >
   )
 }
 
