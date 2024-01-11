@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="fa-IR" dir="rtl" className='dark'>
+    <html lang="fa-IR" dir="rtl">
       <body className='transition-colors duration-500'>
         <Providers>
 
