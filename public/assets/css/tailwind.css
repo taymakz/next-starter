@@ -42,9 +42,6 @@
     @apply font-iranyekan;
   }
 
-  .dark{
-    color-scheme: dark
-  }
 
   /* Color Mode transition */
   ::view-transition-old(root),
