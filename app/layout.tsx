@@ -1,9 +1,10 @@
 
 import type { Metadata } from 'next'
 
-import '../public/assets/css/tailwind.css'
+import '@/public/assets/css/tailwind.css'
 
 import { Providers } from "./providers";
+import { Toaster } from '@/components/ui/sonner';
 
 
 export const metadata: Metadata = {
@@ -21,7 +22,8 @@ export default function RootLayout({
     <html lang="fa-IR" dir="rtl" suppressHydrationWarning>
       <body>
         <Providers>
-            {children}
+          {children}
+          <Toaster />
         </Providers>
 
       </body>
