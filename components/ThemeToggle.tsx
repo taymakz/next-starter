@@ -46,14 +46,14 @@ export function ThemeToggle() {
       ]
       document.documentElement.animate(
         {
-          clipPath: theme === 'dark'
+          clipPath: (theme === 'light')
             ? [...clipPath].reverse()
             : clipPath,
         },
         {
           duration: 500,
           easing: 'ease-in',
-          pseudoElement: theme === 'dark'
+          pseudoElement: (theme === 'light')
             ? '::view-transition-old(root)'
             : '::view-transition-new(root)',
         },
