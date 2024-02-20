@@ -62,12 +62,12 @@ export function ThemeToggle() {
   }
   return (
     <div>
-      <button onClick={(e: any) => toggle(e)} >
+      <button onClick={(e: any) => toggle(e)} className="p-2 border rounded-lg text-text/80 hover:bg-background duration-300">
 
-        {
-          theme === 'dark' ? <Sun /> : <Moon />
-        }
 
+        <Sun className="hidden dark:block" />
+
+        <Moon className="dark:hidden" />
       </button>
     </div >
   )
