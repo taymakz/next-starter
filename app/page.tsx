@@ -1,10 +1,10 @@
 
-import Counter from "@/components/Counter"
+
 import { ThemeToggle } from "@/components/ThemeToggle"
 
 
 
-export default function Home() {
+export default function Index() {
 
   return (
     <>
@@ -14,11 +14,8 @@ export default function Home() {
         <div className="space-y-10">
 
           <p className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-8">
-            Nextjs , NextUI, AceternityUI, Redux Starter
+            Nextjs , AceternityUI, Redux Starter
           </p>
-          <div className="flex justify-center">
-            <Counter />
-          </div>
 
         </div>
       </div>
