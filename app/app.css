@@ -1,9 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
-@layer base {
 
+@layer base {
   :root {
     --background: 240 4.8% 95.9%;
     --text: 240 10% 3.9%;
@@ -22,7 +21,7 @@
     --ring: 240 10% 3.9%;
     --radius: 0.5rem;
   }
-  
+
   .dark {
     --background: 240 10% 3.9%;
     --text: 0 0% 98%;
@@ -40,10 +39,8 @@
     --destructive: 0 62.8% 30.6%;
     --ring: 240 4.9% 83.9%;
   }
-  
-
 }
- 
+
 @layer base {
   @font-face {
     font-family: "IRANYekan";
@@ -80,7 +77,6 @@
     src: url("./fonts/iranyekan/IRANYekanXFaNum-Bold.woff2") format("woff2");
   }
 
- 
   ::selection {
     background: #8884;
   }
@@ -110,7 +106,6 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-text font-iranyekan;
+    @apply bg-background font-iranyekan text-text;
   }
 }
-
