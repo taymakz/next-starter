@@ -62,7 +62,7 @@ export function ThemeToggle() {
     <div>
       <button
         onClick={(e: any) => toggle(e)}
-        className="rounded-lg border p-2 text-text/75 duration-300 hover:bg-background"
+        className="rounded-lg border p-2 text-text/75 duration-200 hover:bg-muted"
       >
         <Sun className="hidden dark:block" size={22} />
 

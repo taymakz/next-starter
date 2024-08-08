@@ -1,4 +1,4 @@
-import { ThemeToggle } from "@/components/ThemeToggle";
+import { ThemeToggle } from "@/components/common/theme-toggle";
 
 export default function Index() {
   return (
@@ -7,7 +7,7 @@ export default function Index() {
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-background [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
         <div className="space-y-10">
           <p className="relative z-20 bg-gradient-to-b from-neutral-200 to-neutral-500 bg-clip-text py-8  font-bold text-transparent text-clamp-lg ">
-            Nextjs , AceternityUI, Framer Motion, Shadcn Starter
+            Nextjs 15, Shadcn, Redux, React Query, Framer Motion Starter
           </p>
         </div>
       </div>
