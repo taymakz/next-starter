@@ -1,3 +1,4 @@
+import type { Config } from "tailwindcss"
 
 
 import svgToDataUri from 'mini-svg-data-uri'
@@ -7,30 +8,19 @@ import animate from 'tailwindcss-animate'
 // @ts-expect-error
 import flattenColorPalette from 'tailwindcss/lib/util/flattenColorPalette'
 
-/** @type {import('tailwindcss').Config} */
-export default {
+const config = {
+  darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
   ],
-  darkMode: 'class',
-  safelist: ['dark'],
+  prefix: "",
   theme: {
-    screens: {
-      'xs': '480px',
-      'sm': '640px',
-      'md': '768px',
-      'lg': '1024px',
-      'xl': '1280px',
-      '2xl': '1680px',
-    },
     container: {
       center: true,
-      padding: {
-        DEFAULT: '1rem',
-        lg: '0.625rem',
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
       },
     },
     extend: {
@@ -48,64 +38,59 @@ export default {
       fontFamily: {
         iranyekan: 'IRANYekan',
       },
-
       colors: {
-        'white': '#FEFEFF',
-        'black': '#0D0D0D',
-        'border': 'hsl(var(--border))',
-        'ring': 'hsl(var(--ring))',
-        'background': 'hsl(var(--background))',
-        'warning': 'hsl(var(--warning))',
-        'success': {
-          DEFAULT: 'hsl(var(--success))',
-          secondary: 'hsl(var(--success-secondary))',
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
         },
-        'alert': 'hsl(var(--alert))',
-        'blue': 'hsl(var(--blue))',
-        'cyan': 'hsl(var(--cyan))',
-        'text': 'hsl(var(--text))',
-        'primary': 'hsl(var(--primary))',
-        'primary-btn': 'hsl(var(--primary-btn))',
-        'secondary': 'hsl(var(--secondary))',
-        'destructive': 'hsl(var(--destructive))',
-        'muted': 'hsl(var(--muted))',
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
       },
-
       borderRadius: {
-        lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)',
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
       },
-
       keyframes: {
-        'accordion-down': {
-          from: { height: 0 },
-          to: { height: 'var(--radix-accordion-content-height)' },
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
-        'accordion-up': {
-          from: { height: 'var(--radix-accordion-content-height)' },
-          to: { height: 0 },
-        },
-        'collapsible-down': {
-          from: { height: 0 },
-          to: { height: 'var(--radix-collapsible-content-height)' },
-        },
-        'collapsible-up': {
-          from: { height: 'var(--radix-collapsible-content-height)' },
-          to: { height: 0 },
-        },
-        'caret-blink': {
-          '0%,70%,100%': { opacity: '1' },
-          '20%,50%': { opacity: '0' },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
       },
-
       animation: {
-        'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out',
-        'collapsible-down': 'collapsible-down 0.2s ease-in-out',
-        'collapsible-up': 'collapsible-up 0.2s ease-in-out',
-        'caret-blink': 'caret-blink 1.2s ease-out infinite',
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
   },
@@ -137,8 +122,11 @@ export default {
         },
       )
     },
+
   ],
-}
+} satisfies Config
+
+export default config
 function addVariablesForColors({ addBase, theme }: any) {
   const allColors = flattenColorPalette(theme('colors'))
   const newVars = Object.fromEntries(

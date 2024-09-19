@@ -4,20 +4,24 @@
 
 @layer base {
   :root {
-    --background: 240 4.8% 95.9%;
-    --muted: 0 0% 100%;
-    --secondary: 0 2% 100;
-    --text: 240 10% 3.9%;
-    --warning: 0 72% 51%;
-    --success: 142 71% 45%;
-    --success-secondary: 160 84% 39%;
-    --alert: 38 92% 50%;
-    --blue: 199 89% 50%;
-    --cyan: 189 94% 43%;
-    --border: 240 5.9% 90%;
-    --primary: 258 90% 66%;
-    --primary-btn: 262 83% 58%;
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
     --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
     --ring: 240 10% 3.9%;
     --radius: 0.5rem;
     --chart-1: 12 76% 61%;
@@ -28,20 +32,24 @@
   }
 
   .dark {
-    --background: 240 16% 4%;
-    --secondary: 214 15% 9%;
-    --muted: 216 12% 8%;
-    --text: 0 0% 98%;
-    --warning: 0 84% 60%;
-    --success: 142 69% 58%;
-    --success-secondary: 161 94% 30%;
-    --alert: 43 96% 56%;
-    --blue: 198 93% 57%;
-    --cyan: 188 86% 53%;
-    --border: 240 3.7% 15.9%;
-    --primary: 255 92% 76%;
-    --primary-btn: 262 83% 58%;
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
     --ring: 240 4.9% 83.9%;
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
@@ -51,40 +59,42 @@
   }
 }
 
+
+
 @layer base {
   @font-face {
     font-family: "IRANYekan";
     font-style: normal;
     font-weight: 300;
-    src: url("/fonts/iranyekan/IRANYekanXFaNum-Light.woff2") format("woff2");
+    src: url("../fonts/iranyekan/IRANYekanXFaNum-Light.woff2") format("woff2");
   }
 
   @font-face {
     font-family: "IRANYekan";
     font-style: normal;
     font-weight: normal;
-    src: url("/fonts/iranyekan/IRANYekanXFaNum-Regular.woff2") format("woff2");
+    src: url("../fonts/iranyekan/IRANYekanXFaNum-Regular.woff2") format("woff2");
   }
 
   @font-face {
     font-family: "IRANYekan";
     font-style: normal;
     font-weight: 500;
-    src: url("/fonts/iranyekan/IRANYekanXFaNum-Medium.woff2") format("woff2");
+    src: url("../fonts/iranyekan/IRANYekanXFaNum-Medium.woff2") format("woff2");
   }
 
   @font-face {
     font-family: "IRANYekan";
     font-style: normal;
     font-weight: 600;
-    src: url("/fonts/iranyekan/IRANYekanXFaNum-DemiBold.woff2") format("woff2");
+    src: url("../fonts/iranyekan/IRANYekanXFaNum-DemiBold.woff2") format("woff2");
   }
 
   @font-face {
     font-family: "IRANYekan";
     font-style: normal;
     font-weight: bold;
-    src: url("/fonts/iranyekan/IRANYekanXFaNum-Bold.woff2") format("woff2");
+    src: url("../fonts/iranyekan/IRANYekanXFaNum-Bold.woff2") format("woff2");
   }
 
   ::selection {
@@ -137,31 +147,9 @@
     @apply border-border;
   }
   body {
-    @apply bg-background font-iranyekan text-text;
+    @apply bg-background font-iranyekan text-foreground;
   }
   .dark {
     color-scheme: dark;
-  }
-}
-
-@layer components {
-  .icon-btn {
-    @apply flex size-10 items-center justify-center rounded-lg border bg-muted p-2 text-text/60 outline-none duration-200 hover:bg-background md:size-9 md:p-1.5 [&>span]:size-full;
-  }
-  .gradient-border-x {
-    background: linear-gradient(
-      to right,
-      hsl(var(--secondary)) 0%,
-      hsl(var(--border)) 50%,
-      hsl(var(--secondary)) 100%
-    );
-  }
-  .gradient-border-y {
-    background: linear-gradient(
-      to bottom,
-      hsl(var(--secondary)) 0%,
-      hsl(var(--border)) 50%,
-      hsl(var(--secondary)) 100%
-    );
   }
 }
