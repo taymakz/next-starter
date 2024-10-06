@@ -49,7 +49,7 @@ export default function Components() {
           <div className="flex justify-center">
             <InputOTPPattern />
           </div>
-          <div className="flex justify-center max-w-sm mx-auto">
+          <div className="flex justify-center max-w-xl mx-auto">
             <InputDemo />
           </div>
 
