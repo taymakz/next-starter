@@ -19,6 +19,7 @@ import { SkeletonDemo } from "@/components/cPage/skeleton";
 import { TooltipDemo } from "@/components/cPage/tooltip";
 import { InputOTPPattern } from "@/components/cPage/input-otp";
 import { InputDemo } from "@/components/cPage/input";
+import { TextareaDemo } from "@/components/cPage/textarea";
 
 export default function Components() {
   return (
@@ -52,7 +53,9 @@ export default function Components() {
           <div className="flex justify-center max-w-xl mx-auto">
             <InputDemo />
           </div>
-
+          <div className="flex justify-center max-w-xl mx-auto">
+            <TextareaDemo />
+          </div>
           <div>
             <CardDemo className="mx-auto" />
           </div>

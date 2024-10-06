@@ -151,4 +151,8 @@
   .dark {
     color-scheme: dark;
   }
+
+  textarea {
+    field-sizing: content;
+  }
 }
