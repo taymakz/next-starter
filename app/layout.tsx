@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "@/app/styles/app.css";
+import "@/app/assets/styles/app.css";
 
 import { BaseProvider } from "@/lib/providers/base";
 import { appDescription, appTitle } from "@/lib/constants";
